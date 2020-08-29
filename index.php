@@ -2,6 +2,4 @@
 
 require("vendor/autoload.php");
 
-$hi = (new \Quark\TextHelper())->print("hi");
-
-var_dump($hello);
+var_dump((new \Quark\TextHelper())->print(date("Y/m/d H:i:s")));
