@@ -27,3 +27,9 @@ PHP Helpers Repository
 #### underscore
 
 Regular expression copied from <https://github.com/cakephp/cakephp/blob/master/src/Utility/Inflector.php>
+
+## Install with Composer
+
+```
+    composer require wesleyflores/quark-helper
+```
