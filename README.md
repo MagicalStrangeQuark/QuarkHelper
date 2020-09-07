@@ -19,3 +19,9 @@ PHP Helpers Repository
 ```
     ./vendor/bin/phpunit tests
 ```
+
+## ArrayHelper
+
+#### underscore
+
+Regular expression copied from <https://github.com/cakephp/cakephp/blob/master/src/Utility/Inflector.php>
