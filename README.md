@@ -24,7 +24,7 @@ PHP Helpers Repository
 
 ## ArrayHelper
 
-#### underscore
+<h3>underscore</h3>
 
 Regular expression copied from <https://github.com/cakephp/cakephp/blob/master/src/Utility/Inflector.php>
 
