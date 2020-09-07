@@ -6,9 +6,6 @@ use PHPUnit\Framework\TestCase;
 
 class ArrayTest extends TestCase
 {
-    /** @var string */
-    private const STRICT_HEXADECIMAL_COLOR_REGEX = '/^#[\d\w+]{6}$/';
-
     /**
      * Underscore Test.
      * 
@@ -36,7 +33,7 @@ class ArrayTest extends TestCase
         $this->assertCount($n, $data);
 
         foreach ($data as $data) {
-            $this->assertTrue((bool)(preg_match(self::STRICT_HEXADECIMAL_COLOR_REGEX, $data)));
+            $this->assertTrue((bool)(preg_match((new \Quark\StringHelper())::STRICT_HEXADECIMAL_COLOR_REGEX, $data)));
         }
     }
 

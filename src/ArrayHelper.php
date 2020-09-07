@@ -13,7 +13,7 @@ class ArrayHelper
      * 
      * @return string
      */
-    public static function underscore(
+    public function underscore(
         string $str
     ): string {
         return mb_strtolower(preg_replace('/(?<=\\w)([A-Z])/', "_" . '\\1', $str));
@@ -27,7 +27,7 @@ class ArrayHelper
      * 
      * @return bool
      */
-    public static function ArrayContains(
+    public function ArrayContains(
         array $needle,
         array $arr
     ): bool {
@@ -47,17 +47,32 @@ class ArrayHelper
      * 
      * @return array
      */
-    public static function getArrayOfHexColors(
+    public function getArrayOfHexColors(
         int $n = 0
     ): array {
         if (
             $n <= 0
         ) {
-            throw new \InvalidArgumentException("The method getArrayOfHexColors expect receive an positive and not null parameter. :{$n} received.");
+            $this->triggerException(new \InvalidArgumentException(), __FUNCTION__, $n);
         }
 
         return array_map(function () {
             return (new \Quark\StringHelper())->getHEXRandomColor();
         }, array_fill(NULL, $n, NULL));
+    }
+
+    /**
+     * Trigger Exception.
+     * 
+     * @param \Exception $e
+     * @param string $fn
+     * @param int $n
+     */
+    private function triggerException(
+        \Exception $e,
+        string $fn,
+        int $n
+    ): void {
+        throw new $e("The method {$fn} expect receive an positive and not null parameter, {$n} received.");
     }
 }

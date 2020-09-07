@@ -19,7 +19,7 @@ PHP Helpers Repository
 ## Running Tests
 
 ```
-    ./vendor/bin/phpunit tests
+    ./vendor/bin/phpunit tests --verbose
 ```
 
 ## ArrayHelper

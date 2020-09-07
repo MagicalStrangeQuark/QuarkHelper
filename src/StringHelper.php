@@ -6,6 +6,9 @@ error_reporting(E_STRICT);
 
 class StringHelper
 {
+    /** @var string */
+    public const STRICT_HEXADECIMAL_COLOR_REGEX = '/^#[\d\w+]{6}$/';
+
     /**
      * Method used to return a random color in hex format.
      *

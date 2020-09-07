@@ -6,9 +6,6 @@ use PHPUnit\Framework\TestCase;
 
 class StringTest extends TestCase
 {
-    /** @var string */
-    private const STRICT_HEXADECIMAL_COLOR_REGEX = '/^#[\d\w+]{6}$/';
-
     /**
      * Test for obtaining a random color in hexadecimal format.
      * 
@@ -16,6 +13,6 @@ class StringTest extends TestCase
      */
     public function testgetHEXRandomColor()
     {
-        $this->assertTrue((bool)(preg_match(self::STRICT_HEXADECIMAL_COLOR_REGEX, (new \Quark\StringHelper())->getHEXRandomColor())));
+        $this->assertTrue((bool)(preg_match((new \Quark\StringHelper())::STRICT_HEXADECIMAL_COLOR_REGEX, (new \Quark\StringHelper())->getHEXRandomColor())));
     }
 }
