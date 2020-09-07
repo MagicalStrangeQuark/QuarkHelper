@@ -11,6 +11,8 @@
 PHP Helpers Repository
 
 ```
+    composer init
+
     composer require --dev phpunit/phpunit
 ```
 
