@@ -13,3 +13,9 @@ PHP Helpers Repository
 ```
     composer require --dev phpunit/phpunit
 ```
+
+## Running Tests
+
+```
+    ./vendor/bin/phpunit tests
+```
