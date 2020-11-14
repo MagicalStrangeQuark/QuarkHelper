@@ -6,9 +6,9 @@
     <img src="https://img.shields.io/github/issues/MagicalStrangeQuark/QuarkHelper"/>
 </p>
 
-# QuarkHelper
+<h2 align="center">QuarkHelper</h2>
 
-PHP Helpers Repository
+<h3 align="center">PHP Helpers Repository</h3>
 
 ```
     composer init
@@ -16,19 +16,27 @@ PHP Helpers Repository
     composer require --dev phpunit/phpunit
 ```
 
-## Running Tests
+<h3 align="center">Running Tests</h3>
+
+<h6 align="center">Linux</h6>
 
 ```
     ./vendor/bin/phpunit tests --verbose
 ```
 
-## ArrayHelper
+<h6 align="center">Windows</h6>
 
-<h4>underscore</h4>
+```
+    .\vendor\bin\phpunit tests --verbose
+```
 
-Regular expression copied from <https://github.com/cakephp/cakephp/blob/master/src/Utility/Inflector.php>
+<h3 align="center">ArrayHelper</h3>
 
-## Install with Composer
+<h4 align="center">underscore</h4>
+
+Regular expression extracted from <https://github.com/cakephp/cakephp/blob/master/src/Utility/Inflector.php>
+
+<h4 align="center">Installing with Composer</h4>
 
 ```
     composer require wesleyflores/quark-helper
