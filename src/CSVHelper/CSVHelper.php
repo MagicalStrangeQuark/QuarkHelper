@@ -28,14 +28,15 @@ final class CSVHelper
     /**
      * Constructor.
      * 
-     * @param string $str
+     * @param string $filename
+     * @param string $delimiter
      */
     public function __construct(
         string $filename,
-        string $str
+        string $delimiter
     ) {
         $this->filename = $filename;
-        $this->delimiter = $str;
+        $this->delimiter = $delimiter;
     }
 
     /**
@@ -47,7 +48,7 @@ final class CSVHelper
      */
     public function get(): string
     {
-        return file_get_contents($this->FILENAME);
+        return file_get_contents($this->filename);
     }
 
     /**
@@ -61,7 +62,7 @@ final class CSVHelper
      */
     public function CSVParser(): array
     {
-        return array_filter(preg_split("/[{$this->DELIMITER}\n]/", $this->get()));
+        return array_filter(preg_split("/[{$this->delimiter}\n]/", $this->get()));
     }
 
     /**
@@ -75,29 +76,8 @@ final class CSVHelper
     {
         return array_chunk(
             array_map(fn (string $str) => $this->trimAll($str), $this->CSVParser()),
-            count($this->CSVParser()) / count(file($this->FILENAME))
+            count($this->CSVParser()) / count(file($this->filename))
         );
-    }
-
-    /**
-     * Set.
-     * 
-     * @param string $str
-     * @param string $arg
-     * 
-     * @return Self
-     */
-    public function __set(
-        string $str,
-        string $arg
-    ): Self {
-        switch ($str) {
-            case self::FILENAME:
-                $this->FILENAME = $arg;
-                break;
-        }
-
-        return $this;
     }
 
     /**

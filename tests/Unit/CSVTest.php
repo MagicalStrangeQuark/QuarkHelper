@@ -6,8 +6,6 @@ use PHPUnit\Framework\TestCase;
 
 class CSVTest extends TestCase
 {
-    private const FILENAME = 'CSV.CSV';
-
     /**
      * Test for obtaining a random color in hexadecimal format.
      * 
@@ -15,7 +13,7 @@ class CSVTest extends TestCase
      */
     public function testCanConvertCSVToStdClass()
     {
-        $data = (new \Quark\CSVHelper(';'))->__set(\Quark\CSVHelper::FILENAME, dirname(__DIR__) . DIRECTORY_SEPARATOR . static::FILENAME)->Objectify();
+        $data = (new \Quark\CSVHelper\CSVHelper(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'CSV.CSV', ';'))->Objectify();
 
         $this->assertEquals(count((array)$data), 3);
 
