@@ -1,6 +1,6 @@
 <?php
 
-namespace Quark;
+namespace Quark\CSVHelper;
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -9,11 +9,15 @@ error_reporting(E_ALL);
 
 final class CSVHelper
 {
-    /** @var string */
-    private string $FILENAME;
+    /**
+     *  Store filename.
+     * 
+     * @var string
+     */
+    private string $filename;
 
     /** @var string */
-    private string $DELIMITER;
+    private string $delimiter;
 
     /** @var string */
     public const FILENAME = '@FILENAME@';
@@ -27,9 +31,11 @@ final class CSVHelper
      * @param string $str
      */
     public function __construct(
+        string $filename,
         string $str
     ) {
-        $this->DELIMITER = $str;
+        $this->filename = $filename;
+        $this->delimiter = $str;
     }
 
     /**
@@ -126,7 +132,7 @@ final class CSVHelper
      * 
      * @param array $arr
      * 
-     * @return array
+     * @return array $data
      */
     private function SQLfy(
         array $arr
